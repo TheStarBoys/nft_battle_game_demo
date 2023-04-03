@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const baseURI = "https://test.url.com";
+  const baseURI = "https://app.bueno.art/api/contract/nwufnF46unE0aJTh7MQN6/chain/1/metadata";
   const Role = await ethers.getContractFactory("Role");
   const role = await Role.deploy(baseURI);
 
