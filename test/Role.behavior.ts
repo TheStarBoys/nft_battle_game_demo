@@ -5,13 +5,13 @@ import { Role } from "../typechain-types";
 
 export function shouldBehaveLikeRoleCreate(): void {
     it("Should create a role", async function () {
-        await createRole(this.role, this.signers.alice, 2, 0, 120, 5);
+        await createRole(this.role, this.signers.alice, 2, 1, 120, 5);
     })
 
     it("Should create a role with increasing id", async function () {
-        await createRole(this.role, this.signers.alice, 1, 0, 80, 15);
-        await createRole(this.role, this.signers.alice, 0, 1, 100, 10);
-        await createRole(this.role, this.signers.bob, 2, 2, 120, 5);
+        await createRole(this.role, this.signers.alice, 1, 1, 80, 15);
+        await createRole(this.role, this.signers.alice, 0, 2, 100, 10);
+        await createRole(this.role, this.signers.bob, 2, 3, 120, 5);
     })
 }
 
@@ -20,19 +20,18 @@ export function shouldBehaveLikeAttack(): void {
         const roleId = 0;
         const enemyRoleId = 1;
 
-        await createRole(this.role, this.signers.alice, 0, 0, 100, 10);
-        await createRole(this.role, this.signers.bob, enemyRoleId, 1, 80, 15);
+        await createRole(this.role, this.signers.alice, 0, 1, 100, 10);
+        await createRole(this.role, this.signers.bob, enemyRoleId, 2, 80, 15);
 
-
-        await doAttack(this.role, this.signers.alice, 0, this.signers.bob, 1, 85, 70);
+        await doAttack(this.role, this.signers.alice, 1, this.signers.bob, 2, 85, 70);
     })
     
     it("Should attack util one of two is dead", async function () {
         const attackerRoleId = 0; // HP, ATK = 100, 10
         const defenderRoleId = 1; // HP, ATK = 80, 15
 
-        const attackerId = 0;
-        const defenderId = 1;
+        const attackerId = 1;
+        const defenderId = 2;
 
         const attacker = this.signers.alice;
         const defender = this.signers.bob;
@@ -53,8 +52,8 @@ export function shouldBehaveLikeAttack(): void {
         const attackerRoleId = 1; // HP, ATK = 80, 15
         const defenderRoleId = 2; // HP, ATK = 120, 5
 
-        const attackerId = 0;
-        const defenderId = 1;
+        const attackerId = 1;
+        const defenderId = 2;
 
         const attacker = this.signers.alice;
         const defender = this.signers.bob;
