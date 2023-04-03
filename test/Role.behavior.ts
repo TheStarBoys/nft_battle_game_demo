@@ -41,12 +41,12 @@ export function shouldBehaveLikeAttack(): void {
         await createRole(this.role, defender, defenderRoleId, defenderId, 80, 15);
 
         await doAttack(this.role, attacker, attackerId, defender, defenderId, 85, 70, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 70, 60, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 55, 50, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 40, 40, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 25, 30, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 10, 20, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 0, 10, Result.DefenderWin);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 70, 60, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 55, 50, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 40, 40, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 25, 30, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 10, 20, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 0, 10, Result.DefenderWin);
     })
 
     it("Role 1 vs. role 2", async function () {
@@ -62,14 +62,14 @@ export function shouldBehaveLikeAttack(): void {
         await createRole(this.role, attacker, attackerRoleId, attackerId, 80, 15);
         await createRole(this.role, defender, defenderRoleId, defenderId, 120, 5);
 
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 75, 105, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 70, 90, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 65, 75, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 60, 60, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 55, 45, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 50, 30, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 45, 15, Result.Pending);
-        // await doAttack(this.role, attacker, attackerId, defender, defenderId, 45, 0, Result.AttackerWin);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 75, 105, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 70, 90, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 65, 75, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 60, 60, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 55, 45, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 50, 30, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 45, 15, Result.Pending);
+        await doAttack(this.role, attacker, attackerId, defender, defenderId, 45, 0, Result.AttackerWin);
     })
 }
 
