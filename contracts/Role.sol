@@ -92,9 +92,13 @@ contract Role is Ownable, ERC721URIStorage {
         uint256 newItemId = _tokenIds.current();
         tokenIdToRoleIds[newItemId] = roleId;
         _mint(player, newItemId);
-        _setTokenURI(newItemId, string(abi.encodePacked("/", newItemId.toString())));
+        _setTokenURI(newItemId, string(abi.encodePacked("/", roleId.toString())));
         tokenHPs[newItemId] = getRoleHP(roleId);
         emit RoleCreated(player, newItemId, roleId);
         return newItemId;
+    }
+
+    function roleIdToURI(uint roleId) public view returns(string memory) {
+        return _baseURI() + string(abi.encodePacked("/", roleId.toString()));
     }
 }
