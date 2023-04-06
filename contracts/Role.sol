@@ -99,6 +99,6 @@ contract Role is Ownable, ERC721URIStorage {
     }
 
     function roleIdToURI(uint roleId) public view returns(string memory) {
-        return _baseURI() + string(abi.encodePacked("/", roleId.toString()));
+        return string(abi.encodePacked(_baseURI(), "/", (roleId+1).toString()));
     }
 }
