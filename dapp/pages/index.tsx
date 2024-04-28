@@ -101,7 +101,7 @@ function Home() {
   function connectWallet(event: React.MouseEvent) {
     event.preventDefault()
     const connector = new InjectedConnector({
-      supportedChainIds: [1, 5, 31337],
+      supportedChainIds: [1, 5, 31337, 11155111],
     })
     !active && connector && activate(connector)
   }
@@ -235,7 +235,8 @@ function Home() {
 export default function App() {
   return (
     <Web3ReactProvider getLibrary={(provider, connector) => {
-      return new Web3Provider(
+      console.log("getLibrary: ", provider, connector);
+      const web3Provider = new Web3Provider(
         provider,
         typeof provider.chainId === 'number'
           ? provider.chainId
@@ -243,6 +244,8 @@ export default function App() {
           ? parseInt(provider.chainId)
           : 'any'
       )
+      console.log("getLibrary, provider:  ", web3Provider);
+      return web3Provider;
     }}>
       <Home></Home>
     </Web3ReactProvider>
